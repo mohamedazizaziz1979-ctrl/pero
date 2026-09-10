@@ -1,0 +1,1747 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إمتحان علي الوحدة الأولي للصف الثالث الإعدادي 2027 - أ. محمد عبد العزيز</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts Cairo & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif']
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0284c7',
+                            600: '#0369a1',
+                            700: '#075985',
+                            800: '#0c4a6e',
+                            900: '#0f172a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #0b132b;
+            color: #f1f5f9;
+            min-height: 100vh;
+        }
+
+        .glass-box {
+            background: rgba(30, 41, 59, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 9999px;
+        }
+
+        @media print {
+            body {
+                background: #ffffff !important;
+                color: #000000 !important;
+                font-family: 'Cairo', sans-serif;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .print-only {
+                display: block !important;
+            }
+            .booklet-page {
+                page-break-after: always;
+                border: 2px solid #000 !important;
+                padding: 20px !important;
+                margin-bottom: 20px !important;
+                color: #000 !important;
+                background: #fff !important;
+            }
+        }
+
+        .english-text {
+            font-family: 'Inter', sans-serif;
+            direction: ltr;
+            display: inline-block;
+        }
+        .english-block {
+            font-family: 'Inter', sans-serif;
+            direction: ltr;
+            text-align: left;
+        }
+
+        /* ===== Light Mode Overrides ===== */
+        body.light-mode {
+            background-color: #f1f5f9 !important;
+            color: #0f172a !important;
+        }
+        body.light-mode .glass-box {
+            background: rgba(255, 255, 255, 0.9) !important;
+            border: 1px solid rgba(15, 23, 42, 0.1) !important;
+        }
+        body.light-mode header,
+        body.light-mode .bg-slate-950,
+        body.light-mode .bg-slate-900,
+        body.light-mode .bg-slate-900\/80,
+        body.light-mode .bg-slate-900\/90,
+        body.light-mode .bg-slate-800,
+        body.light-mode .bg-slate-800\/80,
+        body.light-mode footer {
+            background-color: #ffffff !important;
+        }
+        body.light-mode .text-white {
+            color: #0f172a !important;
+        }
+        body.light-mode .text-slate-200,
+        body.light-mode .text-slate-300 {
+            color: #334155 !important;
+        }
+        body.light-mode .text-slate-400,
+        body.light-mode .text-slate-500 {
+            color: #64748b !important;
+        }
+        body.light-mode .border-slate-800,
+        body.light-mode .border-slate-800\/80,
+        body.light-mode .border-slate-700 {
+            border-color: #e2e8f0 !important;
+        }
+        body.light-mode .hover\:bg-slate-700:hover,
+        body.light-mode .hover\:bg-slate-800:hover {
+            background-color: #f1f5f9 !important;
+        }
+        body.light-mode ::placeholder {
+            color: #94a3b8 !important;
+        }
+    </style>
+</head>
+<body class="selection:bg-sky-500 selection:text-white flex flex-col justify-between">
+
+    <header class="no-print sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Teacher Profile Header -->
+                <div class="flex items-center gap-3 cursor-pointer" onclick="app.showHome()">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center text-white text-2xl shadow-lg shadow-sky-500/20">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <h1 class="font-bold text-lg text-white">أ / محمد عبد العزيز</h1>
+                            <span class="text-[10px] bg-sky-500/20 text-sky-400 border border-sky-500/30 px-2 py-0.5 rounded-full font-bold">2027 الترم الأول</span>
+                        </div>
+                        <p class="text-xs text-slate-400">إمتحان الوحدة الأولى للصف الثالث الإعدادي (نظام البوكليت)</p>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex items-center gap-3">
+                    <button onclick="app.toggleTheme()" id="theme-toggle-btn" class="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-300 text-sm font-bold border border-slate-700 transition flex items-center gap-2">
+                        <i class="fa-solid fa-sun" id="theme-toggle-icon"></i>
+                    </button>
+                    <button onclick="app.showTeacherDashboard()" class="px-4 py-2 rounded-xl bg-indigo-600/20 hover:bg-indigo-600/30 text-indigo-300 text-xs sm:text-sm font-bold border border-indigo-500/30 transition flex items-center gap-2">
+                        <i class="fa-solid fa-users"></i>
+                        <span class="hidden sm:inline">لوحة المعلم</span>
+                    </button>
+                    <button onclick="app.togglePrintMode()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs sm:text-sm font-bold border border-slate-700 transition flex items-center gap-2">
+                        <i class="fa-solid fa-print text-sky-400"></i>
+                        <span class="hidden sm:inline">عرض البوكليت للطباعة</span>
+                    </button>
+                    <a href="tel:01116597331" class="px-3.5 py-2 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-400 text-xs font-bold border border-emerald-500/30 transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-phone"></i>
+                        <span class="hidden md:inline">01116597331</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 w-full">
+
+        <!-- ================= HOME / INTRO SCREEN ================= -->
+        <section id="view-home" class="no-print space-y-8 animate-fade-in">
+            <!-- Hero Card -->
+            <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-sky-900/50 via-slate-900 to-indigo-950/60 border border-sky-500/30 p-6 sm:p-10 shadow-2xl">
+                <div class="relative z-10 space-y-5 max-w-2xl">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-500/20 border border-sky-400/30 text-sky-300 text-xs font-bold">
+                        <i class="fa-solid fa-file-signature"></i> اختبار كراسة التقييمات والأداءات الصفية
+                    </div>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold text-white leading-tight">
+                        إمتحان اللغة الإنجليزية الشامل على <span class="text-sky-400">الوحدة الأولى</span>
+                    </h2>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                        اختبار تفاعلي يحاكي مواصفات الورقة الامتحانية الحديثة (نظام البوكليت) لطلاب الصف الثالث الإعدادي. أجب على الأسئلة للحصول على التقييم المباشر والإجابات النموذجية.
+                    </p>
+
+                    <!-- Exam Quick Meta Info -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 text-xs font-semibold">
+                        <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800 text-center">
+                            <span class="text-slate-400 block mb-1">عدد الأسئلة</span>
+                            <span class="text-white font-bold text-sm">8 أقسام رئيسية</span>
+                        </div>
+                        <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800 text-center">
+                            <span class="text-slate-400 block mb-1">الزمن المقترح</span>
+                            <span class="text-sky-400 font-bold text-sm">30 دقيقة</span>
+                        </div>
+                        <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800 text-center">
+                            <span class="text-slate-400 block mb-1">الدرجة الكلية</span>
+                            <span class="text-emerald-400 font-bold text-sm">30 درجة</span>
+                        </div>
+                        <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800 text-center">
+                            <span class="text-slate-400 block mb-1">إعداد وتصميم</span>
+                            <span class="text-amber-400 font-bold text-xs">أ/ محمد عبد العزيز</span>
+                        </div>
+                    </div>
+
+                    <div id="home-start-panel">
+                        <div class="pt-2">
+                            <label class="block text-xs font-bold text-slate-300 mb-1.5">اكتب اسمك ثلاثيًا قبل بدء الاختبار:</label>
+                            <input type="text" id="student-name-input" placeholder="مثال: محمد أحمد علي" class="w-full sm:w-80 bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-sky-500">
+                        </div>
+
+                        <div class="flex flex-wrap items-center gap-4 pt-3">
+                            <button onclick="app.startInteractiveExam()" class="px-8 py-3.5 rounded-2xl bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white font-extrabold shadow-lg shadow-sky-500/25 transition flex items-center gap-2 text-sm sm:text-base">
+                                <i class="fa-solid fa-play"></i>
+                                <span>بدء الاختبار التفاعلي الآن</span>
+                            </button>
+                            <button onclick="app.togglePrintMode()" class="px-6 py-3.5 rounded-2xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold border border-slate-700 transition flex items-center gap-2 text-sm">
+                                <i class="fa-solid fa-eye text-sky-400"></i>
+                                <span>معاينة البوكليت المطبوع</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Locked panel: shown if this device already attempted the exam -->
+                    <div id="home-locked-panel" class="hidden pt-2 space-y-3">
+                        <div class="bg-red-500/10 border border-red-500/30 rounded-2xl p-4 space-y-2">
+                            <p class="text-red-300 font-bold text-sm flex items-center gap-2">
+                                <i class="fa-solid fa-lock"></i>
+                                <span>هذا الجهاز قام بتأدية الامتحان من قبل</span>
+                            </p>
+                            <p id="locked-panel-info" class="text-xs text-slate-300"></p>
+                            <p class="text-xs text-slate-400">لا يمكن الدخول للامتحان مرة أخرى إلا بإذن المعلم.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-3">
+                            <button onclick="app.sendRetakeRequestWhatsApp()" class="px-5 py-2.5 rounded-xl bg-green-600 hover:bg-green-500 text-white font-bold text-xs sm:text-sm transition flex items-center gap-2">
+                                <i class="fa-brands fa-whatsapp"></i>
+                                <span>إرسال طلب إذن للمعلم واتساب</span>
+                            </button>
+                            <button onclick="app.unlockWithTeacherPassword()" class="px-5 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs sm:text-sm transition flex items-center gap-2">
+                                <i class="fa-solid fa-key"></i>
+                                <span>عندي كلمة السر من المعلم</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Decorative Background Blur -->
+                <div class="absolute -left-10 -bottom-10 w-72 h-72 bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            </div>
+
+            <!-- Teacher Note Card -->
+            <div class="glass-box rounded-2xl p-6 border border-slate-800 flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center shrink-0 text-xl">
+                    <i class="fa-solid fa-pen-nib"></i>
+                </div>
+                <div class="space-y-1">
+                    <h3 class="font-bold text-white text-base">تعليمات ودعوة أ. محمد عبد العزيز</h3>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                        "أكتب بخط جميل وواضح حتى تظهر ورقتك بصورة جميلة ومميزة عن البقية. يُرجى مراجعة كل سؤال بتركيز قبل اعتماد الإجابة النهائية."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= INTERACTIVE EXAM VIEW ================= -->
+        <section id="view-exam" class="no-print hidden space-y-8">
+            
+            <!-- Sticky Exam Top Tracker Bar -->
+            <div class="glass-box rounded-2xl p-4 sticky top-24 z-40 flex flex-col sm:flex-row items-center justify-between gap-4 border border-slate-800 shadow-2xl">
+                <div class="flex items-center gap-3 w-full sm:w-auto">
+                    <button onclick="app.confirmExitExam()" class="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white transition" title="خروج">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                    <div>
+                        <h3 class="font-bold text-white text-sm sm:text-base">إمتحان الوحدة الأولى - البوكليت</h3>
+                        <p class="text-xs text-slate-400">الصف الثالث الإعدادي 2027</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4 w-full sm:w-auto justify-between sm:justify-end">
+                    <!-- Live Timer Box -->
+                    <div id="exam-timer" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-950 border border-slate-800 text-sky-400 font-mono font-bold text-sm sm:text-base">
+                        <i class="fa-regular fa-clock"></i>
+                        <span id="timer-display">30:00</span>
+                    </div>
+
+                    <button onclick="app.submitExam()" class="px-5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm transition flex items-center gap-2 shadow-lg shadow-emerald-600/20">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>إنهاء وتسليم الامتحان</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- EXAM FORM SECTIONS -->
+            <form id="exam-form" dir="ltr" onsubmit="event.preventDefault();" class="space-y-8 text-left">
+
+                <div class="glass-box rounded-3xl p-6 sm:p-8 space-y-6 border border-slate-800">
+                    <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-lg bg-sky-500/20 text-sky-400 font-bold flex items-center justify-center text-sm border border-sky-500/30">1</span>
+                            <h3 class="font-bold text-white text-base sm:text-lg">Reading & Vocabulary</h3>
+                        </div>
+                        <span class="text-xs text-slate-400 bg-slate-800 px-3 py-1 rounded-full border border-slate-700">(4 Marks)</span>
+                    </div>
+
+                    <p class="text-sm font-semibold text-slate-300">Choose the correct answer from a, b, c, or d:</p>
+
+                    <div class="space-y-6">
+                        <!-- Q1 -->
+                        <div class="bg-slate-900/60 p-4 rounded-2xl border border-slate-800/80 space-y-3">
+                            <p class="text-sm sm:text-base font-bold text-white english-block">
+                                1. Self-________ means learning more about who you are.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1 english-block">
+                                <label class="p-3 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-3 transition text-sm">
+                                    <input type="radio" name="mcq_1" value="esteem" class="accent-sky-500">
+                                    <span>a) esteem</span>
+                                </label>
+                                <label class="p-3 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-3 transition text-sm">
+                                    <input type="radio" name="mcq_1" value="discovery" class="accent-sky-500">
+                                    <span>b) discovery</span>
+                                </label>
+                                <label class="p-3 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-3 transition text-sm">
+                                    <input type="radio" name="mcq_1" value="confidence" class="accent-sky-500">
+                                    <span>c) confidence</span>
+                                </label>
+                                <label class="p-3 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-3 transition text-sm">
+                                    <input type="radio" name="mcq_1" value="denial" class="accent-sky-500">
+                                    <span>d) denial</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Q2 -->
+                        <div class="bg-slate-900/60 p-4 rounded-2xl border border-slate-800/80 space-y-3">
+                            <p class="text-sm sm:text-base font-bold text-white english-block">
+                                2. We add the prefix ________ to give the opposite of "patient".
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1 english-block">
+                                <label class="p-3 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-3 transition text-sm">
+                                    <input type="radio" name="mcq_2" value="in-" class="accent-sky-500">
+                                    <span>a) in-</span>
+                                </label>
+                                <label class="p-3 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-3 transition text-sm">
+                                    <input type="radio" name="mcq_2" value="il-" class="accent-sky-500">
+                                    <span>b) il-</span>
+                                </label>
+                                <label class="p-3 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-3 transition text-sm">
+                                    <input type="radio" name="mcq_2" value="im-" class="accent-sky-500">
+                                    <span>c) im-</span>
+                                </label>
+                                <label class="p-3 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-3 transition text-sm">
+                                    <input type="radio" name="mcq_2" value="un-" class="accent-sky-500">
+                                    <span>d) un-</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Q3 -->
+                        <div class="bg-slate-900/60 p-4 rounded-2xl border border-slate-800/80 space-y-3">
+                            <p class="text-sm sm:text-base font-bold text-white english-block">
+                                3. He was very delighted after the match. The antonym of "delighted" is ________.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1 english-block">
+                                <label class="p-3 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-3 transition text-sm">
+                                    <input type="radio" name="mcq_3" value="happy" class="accent-sky-500">
+                                    <span>a) happy</span>
+                                </label>
+                                <label class="p-3 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-3 transition text-sm">
+                                    <input type="radio" name="mcq_3" value="depressed" class="accent-sky-500">
+                                    <span>b) depressed</span>
+                                </label>
+                                <label class="p-3 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-3 transition text-sm">
+                                    <input type="radio" name="mcq_3" value="glad" class="accent-sky-500">
+                                    <span>c) glad</span>
+                                </label>
+                                <label class="p-3 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-3 transition text-sm">
+                                    <input type="radio" name="mcq_3" value="pleased" class="accent-sky-500">
+                                    <span>d) pleased</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Q4 -->
+                        <div class="bg-slate-900/60 p-4 rounded-2xl border border-slate-800/80 space-y-3">
+                            <p class="text-sm sm:text-base font-bold text-white english-block">
+                                4. Have you ever tried to ________ a change in your school or community?
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1 english-block">
+                                <label class="p-3 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-3 transition text-sm">
+                                    <input type="radio" name="mcq_4" value="let" class="accent-sky-500">
+                                    <span>a) let</span>
+                                </label>
+                                <label class="p-3 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-3 transition text-sm">
+                                    <input type="radio" name="mcq_4" value="get" class="accent-sky-500">
+                                    <span>b) get</span>
+                                </label>
+                                <label class="p-3 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-3 transition text-sm">
+                                    <input type="radio" name="mcq_4" value="take" class="accent-sky-500">
+                                    <span>c) take</span>
+                                </label>
+                                <label class="p-3 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-3 transition text-sm">
+                                    <input type="radio" name="mcq_4" value="make" class="accent-sky-500">
+                                    <span>d) make</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-box rounded-3xl p-6 sm:p-8 space-y-6 border border-slate-800">
+                    <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-lg bg-sky-500/20 text-sky-400 font-bold flex items-center justify-center text-sm border border-sky-500/30">2</span>
+                            <h3 class="font-bold text-white text-base sm:text-lg">Complete text with words in the box</h3>
+                        </div>
+                        <span class="text-xs text-slate-400 bg-slate-800 px-3 py-1 rounded-full border border-slate-700">(3 Marks)</span>
+                    </div>
+
+                    <!-- Word Bank Box -->
+                    <div class="bg-slate-950 p-4 rounded-2xl border border-sky-500/30 text-center">
+                        <span class="text-xs text-sky-400 block font-bold mb-2">Word Box Options:</span>
+                        <div class="flex flex-wrap justify-center gap-2 sm:gap-4 font-mono font-bold text-white text-sm sm:text-base english-text">
+                            <span class="bg-slate-800 px-3 py-1 rounded-lg border border-slate-700">confident</span>
+                            <span class="bg-slate-800 px-3 py-1 rounded-lg border border-slate-700">values</span>
+                            <span class="bg-slate-800 px-3 py-1 rounded-lg border border-slate-700">has</span>
+                            <span class="bg-slate-800 px-3 py-1 rounded-lg border border-slate-700">give</span>
+                            <span class="bg-slate-800 px-3 py-1 rounded-lg border border-slate-700">strong</span>
+                            <span class="bg-slate-800 px-3 py-1 rounded-lg border border-slate-700">lazy</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-800 leading-relaxed text-slate-200 text-sm sm:text-base english-block">
+                        For our school project, we had to create an identity map. It was a chance to show our personal 
+                        <select id="gap_1" class="bg-slate-950 border border-slate-700 rounded-xl px-3 py-1 text-sky-400 font-bold mx-1 focus:outline-none focus:border-sky-500">
+                            <option value="">(1) Select...</option>
+                            <option value="confident">confident</option>
+                            <option value="values">values</option>
+                            <option value="has">has</option>
+                            <option value="give">give</option>
+                            <option value="strong">strong</option>
+                            <option value="lazy">lazy</option>
+                        </select>. My map showed that I am 
+                        <select id="gap_2" class="bg-slate-950 border border-slate-700 rounded-xl px-3 py-1 text-sky-400 font-bold mx-1 focus:outline-none focus:border-sky-500">
+                            <option value="">(2) Select...</option>
+                            <option value="confident">confident</option>
+                            <option value="values">values</option>
+                            <option value="has">has</option>
+                            <option value="give">give</option>
+                            <option value="strong">strong</option>
+                            <option value="lazy">lazy</option>
+                        </select> because I don't 
+                        <select id="gap_3" class="bg-slate-950 border border-slate-700 rounded-xl px-3 py-1 text-sky-400 font-bold mx-1 focus:outline-none focus:border-sky-500">
+                            <option value="">(3) Select...</option>
+                            <option value="confident">confident</option>
+                            <option value="values">values</option>
+                            <option value="has">has</option>
+                            <option value="give">give</option>
+                            <option value="strong">strong</option>
+                            <option value="lazy">lazy</option>
+                        </select> up easily. This assignment helped me feel more sure about my abilities and who I am.
+                    </div>
+                </div>
+
+                <div class="glass-box rounded-3xl p-6 sm:p-8 space-y-6 border border-slate-800">
+                    <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-lg bg-sky-500/20 text-sky-400 font-bold flex items-center justify-center text-sm border border-sky-500/30">3</span>
+                            <h3 class="font-bold text-white text-base sm:text-lg">Reading Comprehension</h3>
+                        </div>
+                        <span class="text-xs text-slate-400 bg-slate-800 px-3 py-1 rounded-full border border-slate-700">(6 Marks)</span>
+                    </div>
+
+                    <!-- Passage Text -->
+                    <div class="bg-slate-950 p-5 rounded-2xl border border-slate-800 text-slate-200 text-sm sm:text-base leading-relaxed space-y-3 english-block">
+                        <p>
+                            Self-confidence is the belief in one's own abilities. It helps people face challenges with courage and optimism. A confident student, for example, may try answering difficult questions in class even if they are not completely sure. This courage often leads to improvement, because making mistakes is part of learning. People with self-confidence are usually more willing to take opportunities. If someone believes in themselves, they are more likely to join competitions, apply for jobs, or speak in public.
+                        </p>
+                        <p>
+                            On the other hand, those who lack confidence may avoid such chances, fearing failure.
+                        </p>
+                        <p>
+                            Building self-confidence takes time. Small successes, supportive friends, and positive self-talk all help. Confidence grows step by step, like a plant watered every day. Eventually, it becomes strong enough to face bigger storms in life. Self-confidence does not mean being perfect; it means trusting yourself enough to try, learn, and grow.
+                        </p>
+                    </div>
+
+                    <!-- Part A: MCQs -->
+                    <div class="space-y-4 pt-2">
+                        <h4 class="font-bold text-sky-400 text-sm">A. Choose the correct answer from a, b, c, or d:</h4>
+
+                        <!-- Passage Q1 -->
+                        <div class="bg-slate-900/60 p-4 rounded-2xl border border-slate-800 space-y-2">
+                            <p class="text-sm font-bold text-white english-block">1. What does self-confidence mainly mean?</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm english-block">
+                                <label class="p-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-2">
+                                    <input type="radio" name="comp_mcq_1" value="a" class="accent-sky-500">
+                                    <span>a) Winning</span>
+                                </label>
+                                <label class="p-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-2">
+                                    <input type="radio" name="comp_mcq_1" value="b" class="accent-sky-500">
+                                    <span>b) Believing in one's abilities</span>
+                                </label>
+                                <label class="p-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-2">
+                                    <input type="radio" name="comp_mcq_1" value="c" class="accent-sky-500">
+                                    <span>c) Being perfect</span>
+                                </label>
+                                <label class="p-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-2">
+                                    <input type="radio" name="comp_mcq_1" value="d" class="accent-sky-500">
+                                    <span>d) Avoiding risks</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Passage Q2 -->
+                        <div class="bg-slate-900/60 p-4 rounded-2xl border border-slate-800 space-y-2">
+                            <p class="text-sm font-bold text-white english-block">2. According to the passage, what helps in building self-confidence?</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm english-block">
+                                <label class="p-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-2">
+                                    <input type="radio" name="comp_mcq_2" value="a" class="accent-sky-500">
+                                    <span>a) Avoiding challenges</span>
+                                </label>
+                                <label class="p-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-2">
+                                    <input type="radio" name="comp_mcq_2" value="b" class="accent-sky-500">
+                                    <span>b) Negative self-talk</span>
+                                </label>
+                                <label class="p-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-2">
+                                    <input type="radio" name="comp_mcq_2" value="c" class="accent-sky-500">
+                                    <span>c) Ignoring mistakes</span>
+                                </label>
+                                <label class="p-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-2">
+                                    <input type="radio" name="comp_mcq_2" value="d" class="accent-sky-500">
+                                    <span>d) Supportive friends</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Passage Q3 -->
+                        <div class="bg-slate-900/60 p-4 rounded-2xl border border-slate-800 space-y-2">
+                            <p class="text-sm font-bold text-white english-block">3. The passage compares self-confidence to ________.</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm english-block">
+                                <label class="p-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-2">
+                                    <input type="radio" name="comp_mcq_3" value="a" class="accent-sky-500">
+                                    <span>a) a mountain</span>
+                                </label>
+                                <label class="p-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-2">
+                                    <input type="radio" name="comp_mcq_3" value="b" class="accent-sky-500">
+                                    <span>b) a storm</span>
+                                </label>
+                                <label class="p-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-2">
+                                    <input type="radio" name="comp_mcq_3" value="c" class="accent-sky-500">
+                                    <span>c) a plant</span>
+                                </label>
+                                <label class="p-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-2">
+                                    <input type="radio" name="comp_mcq_3" value="d" class="accent-sky-500">
+                                    <span>d) a book</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Part B: Open Questions -->
+                    <div class="space-y-4 pt-2 border-t border-slate-800">
+                        <h4 class="font-bold text-sky-400 text-sm">B. Answer the following questions:</h4>
+
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-bold text-white mb-1.5 english-block">3. Why might a confident student try to answer difficult questions in class?</label>
+                                <input type="text" id="comp_open_1" placeholder="Type your answer here in English..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-sky-500 english-block">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-white mb-1.5 english-block">4. What may happen to people who lack self-confidence?</label>
+                                <input type="text" id="comp_open_2" placeholder="Type your answer here in English..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-sky-500 english-block">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-white mb-1.5 english-block">5. How does the passage suggest self-confidence grows over time?</label>
+                                <input type="text" id="comp_open_3" placeholder="Type your answer here in English..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-sky-500 english-block">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-box rounded-3xl p-6 sm:p-8 space-y-6 border border-slate-800">
+                    <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-lg bg-sky-500/20 text-sky-400 font-bold flex items-center justify-center text-sm border border-sky-500/30">4</span>
+                            <h3 class="font-bold text-white text-base sm:text-lg">Story Section (Zeina)</h3>
+                        </div>
+                        <span class="text-xs text-slate-400 bg-slate-800 px-3 py-1 rounded-full border border-slate-700">(5 Marks)</span>
+                    </div>
+
+                    <!-- Story MCQs -->
+                    <div class="space-y-4">
+                        <h4 class="font-bold text-sky-400 text-sm">A. Choose the correct answer from a, b, c, or d:</h4>
+
+                        <!-- Story Q1 -->
+                        <div class="bg-slate-900/60 p-4 rounded-2xl border border-slate-800 space-y-2">
+                            <p class="text-sm font-bold text-white english-block">1. Zeina was a new student at a ________ school.</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm english-block">
+                                <label class="p-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-2">
+                                    <input type="radio" name="story_mcq_1" value="primary" class="accent-sky-500">
+                                    <span>a) primary</span>
+                                </label>
+                                <label class="p-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-2">
+                                    <input type="radio" name="story_mcq_1" value="preparatory" class="accent-sky-500">
+                                    <span>b) preparatory</span>
+                                </label>
+                                <label class="p-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-2">
+                                    <input type="radio" name="story_mcq_1" value="kindergarten" class="accent-sky-500">
+                                    <span>c) kindergarten</span>
+                                </label>
+                                <label class="p-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-2">
+                                    <input type="radio" name="story_mcq_1" value="secondary" class="accent-sky-500">
+                                    <span>d) secondary</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Story Q2 -->
+                        <div class="bg-slate-900/60 p-4 rounded-2xl border border-slate-800 space-y-2">
+                            <p class="text-sm font-bold text-white english-block">2. Zeina was always ________ and liked to notice everything around her.</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm english-block">
+                                <label class="p-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-2">
+                                    <input type="radio" name="story_mcq_2" value="curious" class="accent-sky-500">
+                                    <span>a) curious</span>
+                                </label>
+                                <label class="p-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-2">
+                                    <input type="radio" name="story_mcq_2" value="lazy" class="accent-sky-500">
+                                    <span>b) lazy</span>
+                                </label>
+                                <label class="p-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-2">
+                                    <input type="radio" name="story_mcq_2" value="honest" class="accent-sky-500">
+                                    <span>c) honest</span>
+                                </label>
+                                <label class="p-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-2">
+                                    <input type="radio" name="story_mcq_2" value="silly" class="accent-sky-500">
+                                    <span>d) silly</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Story Q3 -->
+                        <div class="bg-slate-900/60 p-4 rounded-2xl border border-slate-800 space-y-2">
+                            <p class="text-sm font-bold text-white english-block">3. Nancy thought the gray playground was a little ________.</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm english-block">
+                                <label class="p-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-2">
+                                    <input type="radio" name="story_mcq_3" value="honest" class="accent-sky-500">
+                                    <span>a) honest</span>
+                                </label>
+                                <label class="p-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-2">
+                                    <input type="radio" name="story_mcq_3" value="curious" class="accent-sky-500">
+                                    <span>b) curious</span>
+                                </label>
+                                <label class="p-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-2">
+                                    <input type="radio" name="story_mcq_3" value="depressing" class="accent-sky-500">
+                                    <span>c) depressing</span>
+                                </label>
+                                <label class="p-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-2">
+                                    <input type="radio" name="story_mcq_3" value="new" class="accent-sky-500">
+                                    <span>d) new</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Story Q4 -->
+                        <div class="bg-slate-900/60 p-4 rounded-2xl border border-slate-800 space-y-2">
+                            <p class="text-sm font-bold text-white english-block">4. Zeina imagined students eating lunch among ________ and plants.</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm english-block">
+                                <label class="p-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-2">
+                                    <input type="radio" name="story_mcq_4" value="paper" class="accent-sky-500">
+                                    <span>a) paper</span>
+                                </label>
+                                <label class="p-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-2">
+                                    <input type="radio" name="story_mcq_4" value="classrooms" class="accent-sky-500">
+                                    <span>b) classrooms</span>
+                                </label>
+                                <label class="p-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-2">
+                                    <input type="radio" name="story_mcq_4" value="flowers" class="accent-sky-500">
+                                    <span>c) flowers</span>
+                                </label>
+                                <label class="p-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:border-sky-500/50 cursor-pointer flex items-center gap-2">
+                                    <input type="radio" name="story_mcq_4" value="chairs" class="accent-sky-500">
+                                    <span>d) chairs</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Story Open Questions -->
+                    <div class="space-y-4 pt-2 border-t border-slate-800">
+                        <h4 class="font-bold text-sky-400 text-sm">B. Answer the following questions:</h4>
+
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-bold text-white mb-1.5 english-block">1. What did Zeina notice on her first day at school?</label>
+                                <input type="text" id="story_open_1" placeholder="Type answer in English..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-sky-500 english-block">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-white mb-1.5 english-block">2. Why do you think Zeina wanted to improve the playground?</label>
+                                <input type="text" id="story_open_2" placeholder="Type answer in English..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-sky-500 english-block">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Section 5: Rewrite -->
+                    <div class="glass-box rounded-3xl p-6 space-y-5 border border-slate-800">
+                        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                            <div class="flex items-center gap-2">
+                                <span class="w-7 h-7 rounded-lg bg-sky-500/20 text-sky-400 font-bold flex items-center justify-center text-xs border border-sky-500/30">5</span>
+                                <h3 class="font-bold text-white text-base">Rewrite the sentences</h3>
+                            </div>
+                            <span class="text-xs text-slate-400">(3 Marks)</span>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div>
+                                <p class="text-sm font-semibold text-slate-200 mb-1 english-block">1. Will you tidy the flat? <span class="text-sky-400 font-bold">(already)</span></p>
+                                <input type="text" id="rewrite_1" placeholder="Type rewritten sentence..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2 text-sm text-white focus:outline-none focus:border-sky-500 english-block">
+                            </div>
+                            <div>
+                                <p class="text-sm font-semibold text-slate-200 mb-1 english-block">2. Do you clean the flat? <span class="text-sky-400 font-bold">(yet)</span></p>
+                                <input type="text" id="rewrite_2" placeholder="Type rewritten sentence..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2 text-sm text-white focus:outline-none focus:border-sky-500 english-block">
+                            </div>
+                            <div>
+                                <p class="text-sm font-semibold text-slate-200 mb-1 english-block">3. Sameh has drunk milk. <span class="text-sky-400 font-bold">(What.........?)</span></p>
+                                <input type="text" id="rewrite_3" placeholder="Type rewritten question..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2 text-sm text-white focus:outline-none focus:border-sky-500 english-block">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 6: Correct Word in Brackets -->
+                    <div class="glass-box rounded-3xl p-6 space-y-5 border border-slate-800">
+                        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                            <div class="flex items-center gap-2">
+                                <span class="w-7 h-7 rounded-lg bg-sky-500/20 text-sky-400 font-bold flex items-center justify-center text-xs border border-sky-500/30">6</span>
+                                <h3 class="font-bold text-white text-base">Complete with correct form</h3>
+                            </div>
+                            <span class="text-xs text-slate-400">(3 Marks)</span>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div>
+                                <p class="text-sm font-semibold text-slate-200 mb-1 english-block">1. They <span class="text-amber-400 font-bold">(are)</span> gone to the market.</p>
+                                <input type="text" id="correct_1" placeholder="Correct word..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2 text-sm text-white focus:outline-none focus:border-sky-500 english-block">
+                            </div>
+                            <div>
+                                <p class="text-sm font-semibold text-slate-200 mb-1 english-block">2. I've <span class="text-amber-400 font-bold">(already)</span> been to Europe. I wish I could.</p>
+                                <input type="text" id="correct_2" placeholder="Correct word..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2 text-sm text-white focus:outline-none focus:border-sky-500 english-block">
+                            </div>
+                            <div>
+                                <p class="text-sm font-semibold text-slate-200 mb-1 english-block">3. Manar <span class="text-amber-400 font-bold">(has encouraged)</span> by her family.</p>
+                                <input type="text" id="correct_3" placeholder="Correct verb form..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2 text-sm text-white focus:outline-none focus:border-sky-500 english-block">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-box rounded-3xl p-6 sm:p-8 space-y-6 border border-slate-800">
+                    <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-lg bg-sky-500/20 text-sky-400 font-bold flex items-center justify-center text-sm border border-sky-500/30">7</span>
+                            <h3 class="font-bold text-white text-base sm:text-lg">Finish the following dialog</h3>
+                        </div>
+                        <span class="text-xs text-slate-400 bg-slate-800 px-3 py-1 rounded-full border border-slate-700">(4 Marks)</span>
+                    </div>
+
+                    <div class="bg-slate-950 p-3.5 rounded-2xl border border-sky-500/20 text-sky-300 text-xs sm:text-sm font-bold">
+                        Context: A man wants to buy a pair of black shoes.
+                    </div>
+
+                    <div class="space-y-4 bg-slate-900/60 p-5 rounded-2xl border border-slate-800 text-sm english-block">
+                        <div class="flex items-start gap-2">
+                            <span class="font-bold text-sky-400 min-w-[70px]">Man:</span>
+                            <p class="text-slate-200">Excuse me. I 'm trying to find a pair of black shoes, please.</p>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <span class="font-bold text-emerald-400 min-w-[70px]">Assistant:</span>
+                            <div class="flex-1 flex items-center gap-2">
+                                <span class="text-slate-400">(1)</span>
+                                <input type="text" id="dialogue_1" placeholder="Assistant asks question..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5 text-sm text-white focus:outline-none focus:border-sky-500">
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-2">
+                            <span class="font-bold text-sky-400 min-w-[70px]">Man:</span>
+                            <p class="text-slate-200">Size 44.</p>
+                        </div>
+
+                        <div class="flex items-start gap-2">
+                            <span class="font-bold text-emerald-400 min-w-[70px]">Assistant:</span>
+                            <p class="text-slate-200">Just a minute. Try this one.</p>
+                        </div>
+
+                        <div class="flex items-start gap-2">
+                            <span class="font-bold text-sky-400 min-w-[70px]">Man:</span>
+                            <p class="text-slate-200">It's too tight..</p>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <span class="font-bold text-emerald-400 min-w-[70px]">Assistant:</span>
+                            <div class="flex-1 flex items-center gap-2">
+                                <span>You can see this one. (2)</span>
+                                <input type="text" id="dialogue_2" placeholder="Assistant suggests..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5 text-sm text-white focus:outline-none focus:border-sky-500">
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <span class="font-bold text-sky-400 min-w-[70px]">Man:</span>
+                            <div class="flex-1 flex items-center gap-2">
+                                <span>Yes, it's very nice.. (3)</span>
+                                <input type="text" id="dialogue_3" placeholder="Man asks price..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5 text-sm text-white focus:outline-none focus:border-sky-500">
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-2">
+                            <span class="font-bold text-emerald-400 min-w-[70px]">Assistant:</span>
+                            <p class="text-slate-200">It's 500 pounds.</p>
+                        </div>
+
+                        <div class="flex items-start gap-2">
+                            <span class="font-bold text-sky-400 min-w-[70px]">Man:</span>
+                            <p class="text-slate-200">Here, it is. Thanks a lot.</p>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <span class="font-bold text-emerald-400 min-w-[70px]">Assistant:</span>
+                            <div class="flex-1 flex items-center gap-2">
+                                <span class="text-slate-400">(4)</span>
+                                <input type="text" id="dialogue_4" placeholder="Assistant replies..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5 text-sm text-white focus:outline-none focus:border-sky-500">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-box rounded-3xl p-6 sm:p-8 space-y-6 border border-slate-800">
+                    <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-lg bg-sky-500/20 text-sky-400 font-bold flex items-center justify-center text-sm border border-sky-500/30">8</span>
+                            <h3 class="font-bold text-white text-base sm:text-lg">Paragraph Writing</h3>
+                        </div>
+                        <span class="text-xs text-slate-400 bg-slate-800 px-3 py-1 rounded-full border border-slate-700">(5 Marks)</span>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <p class="text-sm font-bold text-white">
+                                Write One Hundred and Ten (110) words on the following:
+                            </p>
+                            <span class="text-xs text-amber-400 font-bold font-mono">"The role of values in our life"</span>
+                        </div>
+
+                        <textarea id="paragraph_input" oninput="app.updateWordCount()" rows="8" placeholder="Write your paragraph here in English (aim for ~110 words)..." class="w-full bg-slate-950 border border-slate-800 rounded-2xl p-4 text-sm text-white focus:outline-none focus:border-sky-500 leading-relaxed english-block"></textarea>
+
+                        <div class="flex items-center justify-between text-xs text-slate-400">
+                            <span>Word Count Tracker:</span>
+                            <span class="font-mono font-bold text-sky-400"><span id="word-count-num">0</span> / 110 words</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Button Container -->
+                <div class="text-center pt-4">
+                    <button onclick="app.submitExam()" class="px-10 py-4 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-black text-base sm:text-lg shadow-xl shadow-emerald-600/30 transition flex items-center gap-3 mx-auto">
+                        <i class="fa-solid fa-square-check text-xl"></i>
+                        <span>اعتماد وإظهار نتيجتي التفصيلية</span>
+                    </button>
+                </div>
+
+            </form>
+        </section>
+
+        <!-- ================= EXAM RESULTS VIEW ================= -->
+        <section id="view-results" class="no-print hidden space-y-8 animate-fade-in">
+            <!-- Result Summary Card -->
+            <div class="glass-box rounded-3xl p-6 sm:p-10 text-center space-y-6 relative overflow-hidden border border-slate-800 shadow-2xl">
+                <div id="score-badge" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-sky-500/20 text-sky-300 border border-sky-500/30">
+                    <i class="fa-solid fa-award"></i> تم تقييم إجاباتك بنجاح
+                </div>
+
+                <div class="space-y-2">
+                    <div id="final-score-pct" class="text-5xl sm:text-7xl font-black bg-gradient-to-r from-sky-400 via-indigo-300 to-emerald-400 bg-clip-text text-transparent font-mono">
+                        0 / 30
+                    </div>
+                    <p id="score-message" class="text-slate-300 font-bold text-base sm:text-lg">ممتاز! أداء رفيع المستوى.</p>
+                </div>
+
+                <!-- Score Breakdown -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-slate-800">
+                    <div class="bg-slate-950 p-3.5 rounded-2xl border border-slate-800">
+                        <span class="block text-xs text-slate-400 font-semibold mb-1">المفردات والقواعد</span>
+                        <span id="score-obj" class="text-base font-bold text-sky-400 font-mono">0 / 10</span>
+                    </div>
+                    <div class="bg-slate-950 p-3.5 rounded-2xl border border-slate-800">
+                        <span class="block text-xs text-slate-400 font-semibold mb-1">قطعة الفهم</span>
+                        <span id="score-comp" class="text-base font-bold text-indigo-400 font-mono">0 / 6</span>
+                    </div>
+                    <div class="bg-slate-950 p-3.5 rounded-2xl border border-slate-800">
+                        <span class="block text-xs text-slate-400 font-semibold mb-1">القصة والروابط</span>
+                        <span id="score-story" class="text-base font-bold text-purple-400 font-mono">0 / 8</span>
+                    </div>
+                    <div class="bg-slate-950 p-3.5 rounded-2xl border border-slate-800">
+                        <span class="block text-xs text-slate-400 font-semibold mb-1">المحادثة والكتابة</span>
+                        <span id="score-write" class="text-base font-bold text-emerald-400 font-mono">0 / 6</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-3 pt-2">
+                    <button onclick="app.sendResultToTeacherWhatsApp()" class="px-5 py-2.5 rounded-xl bg-green-600 hover:bg-green-500 text-white font-bold text-xs sm:text-sm transition flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>إرسال نتيجتي للمعلم واتساب</span>
+                    </button>
+                    <button onclick="app.retakeExam()" class="px-5 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs sm:text-sm transition flex items-center gap-2">
+                        <i class="fa-solid fa-rotate-right"></i>
+                        <span>إعادة الامتحان</span>
+                    </button>
+                    <button onclick="app.togglePrintMode()" class="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs sm:text-sm border border-slate-700 transition flex items-center gap-2">
+                        <i class="fa-solid fa-print text-sky-400"></i>
+                        <span>طباعة التقرير / البوكليت</span>
+                    </button>
+                </div>
+                <p class="text-center text-[11px] text-slate-500 -mt-1">
+                    اضغط الزر الأخضر ليصل اسمك ودرجتك للمعلم مباشرة على الواتساب مهما كان جهازك.
+                </p>
+            </div>
+
+            <!-- Detailed Answer Keys & Explanations -->
+            <div class="space-y-4">
+                <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-list-check text-sky-400"></i>
+                    <span>نموذج الإجابات والتوضيحات النموذجية</span>
+                </h3>
+
+                <div id="results-breakdown-container" class="space-y-4">
+                    <!-- Dynamic review items generated by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= TEACHER DASHBOARD VIEW ================= -->
+        <section id="view-teacher-dashboard" class="no-print hidden space-y-6 animate-fade-in">
+            <div class="glass-box rounded-3xl p-6 border border-slate-800 space-y-4">
+                <div class="flex items-center justify-between flex-wrap gap-3">
+                    <h2 class="text-xl font-bold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-users text-indigo-400"></i>
+                        <span>لوحة المعلم - الطلاب الذين دخلوا الامتحان</span>
+                    </h2>
+                    <div class="flex items-center gap-2">
+                        <button onclick="app.exportDashboardCSV()" class="px-4 py-2 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-400 text-xs font-bold border border-emerald-500/30 transition flex items-center gap-2">
+                            <i class="fa-solid fa-file-csv"></i> تصدير CSV
+                        </button>
+                        <button onclick="app.clearDashboardData()" class="px-4 py-2 rounded-xl bg-red-600/20 hover:bg-red-600/30 text-red-400 text-xs font-bold border border-red-500/30 transition flex items-center gap-2">
+                            <i class="fa-solid fa-trash"></i> مسح السجل
+                        </button>
+                        <button onclick="app.showHome()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold border border-slate-700 transition">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <p class="text-xs text-amber-400 bg-amber-500/10 border border-amber-500/20 rounded-xl p-3 leading-relaxed">
+                    <i class="fa-solid fa-circle-info"></i>
+                    ملحوظة: هذا الجدول يعرض فقط الطلاب الذين أدوا الامتحان على هذا الجهاز/المتصفح تحديداً (Local Storage) — مناسب لمعمل كمبيوتر بالمدرسة. أما الطلاب الذين يؤدون الامتحان من أجهزتهم الشخصية في المنزل، فستصلك نتائجهم تلقائياً على الواتساب عند ضغطهم زر "إرسال نتيجتي للمعلم واتساب" في صفحة النتيجة.
+                </p>
+
+                <div id="dashboard-summary" class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-semibold"></div>
+
+                <div class="overflow-x-auto custom-scrollbar">
+                    <table class="w-full text-sm text-right">
+                        <thead>
+                            <tr class="text-slate-400 border-b border-slate-800">
+                                <th class="p-2">#</th>
+                                <th class="p-2">اسم الطالب</th>
+                                <th class="p-2">التاريخ والوقت</th>
+                                <th class="p-2">الدرجة</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dashboard-table-body">
+                            <!-- Rows injected by JS -->
+                        </tbody>
+                    </table>
+                </div>
+                <div id="dashboard-empty-state" class="hidden text-center text-slate-500 text-sm py-10">
+                    لا يوجد طلاب مسجلون بعد على هذا الجهاز.
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PRINTABLE BOOKLET VIEW (Page standard) ================= -->
+        <section id="view-print-booklet" class="print-only hidden space-y-8 bg-white text-black p-6 rounded-none">
+            
+            <!-- Booklet Header Header Sheet -->
+            <div class="border-4 border-black p-6 text-center space-y-3 mb-6">
+                <div class="flex justify-between items-center text-xs font-bold border-b-2 border-black pb-2">
+                    <div>وزارة التربية والتعليم</div>
+                    <div>إمتحان الوحدة الأولى - 2027</div>
+                    <div>الصف الثالث الإعدادي</div>
+                </div>
+
+                <h2 class="text-xl font-black text-black tracking-wide">
+                    إمتحان علي الوحدة الأولي للصف الثالث الإعدادي (بنظام البوكليت الحديث)
+                </h2>
+                <div class="text-sm font-bold text-gray-800">
+                    كتاب التقييمات والأداءات الصفية - الترم الأول
+                </div>
+
+                <div class="flex justify-between items-center text-xs font-bold border-t-2 border-black pt-2">
+                    <div>إعداد أ / محمد عبد العزيز</div>
+                    <div>تليفون: 01116597331</div>
+                    <div>الزمن: ساعة واحدة</div>
+                </div>
+            </div>
+
+            <!-- Printable Body Questions -->
+            <div dir="ltr" class="space-y-6 text-sm text-black english-block text-left">
+                
+                <!-- Q1 -->
+                <div class="border-b border-black pb-4 space-y-2">
+                    <div class="font-bold flex justify-between">
+                        <span>1. Read and choose the correct answer:</span>
+                        <span>(4 Marks)</span>
+                    </div>
+                    <p>1. Self-________ means learning more about who you are. (a. esteem / b. discovery / c. confidence / d. denial)</p>
+                    <p>2. We add the prefix ________ to give the opposite of "patient". (a. in- / b. il- / c. im- / d. un-)</p>
+                    <p>3. He was very delighted after the match. The antonym of "delighted" is ________. (a. happy / b. depressed / c. glad / d. pleased)</p>
+                    <p>4. Have you ever tried to ________ a change in your school or community? (a. let / b. get / c. take / d. make)</p>
+                </div>
+
+                <!-- Q2 -->
+                <div class="border-b border-black pb-4 space-y-2">
+                    <div class="font-bold flex justify-between">
+                        <span>2. Read and complete the text with words in the box:</span>
+                        <span>(3 Marks)</span>
+                    </div>
+                    <div class="border border-black p-2 text-center font-bold">
+                        confident - values - has - give - strong - lazy
+                    </div>
+                    <p class="leading-loose">
+                        For our school project, we had to create an identity map. It was a chance to show our personal (1) .................... My map showed that I am (2) .................... because I don't (3) .................... up easily. This assignment helped me feel more sure about my abilities and who I am.
+                    </p>
+                </div>
+
+                <!-- Q3 -->
+                <div class="border-b border-black pb-4 space-y-2">
+                    <div class="font-bold flex justify-between">
+                        <span>3. Read the text, then answer the questions:</span>
+                        <span>(6 Marks)</span>
+                    </div>
+                    <p class="text-xs leading-relaxed border p-2">
+                        Self-confidence is the belief in one's own abilities. It helps people face challenges with courage and optimism. A confident student, for example, may try answering difficult questions in class even if they are not completely sure. This courage often leads to improvement, because making mistakes is part of learning. People with self-confidence are usually more willing to take opportunities. If someone believes in themselves, they are more likely to join competitions, apply for jobs, or speak in public.
+                        On the other hand, those who lack confidence may avoid such chances, fearing failure. Building self-confidence takes time. Small successes, supportive friends, and positive self-talk all help. Confidence grows step by step, like a plant watered every day. Eventually, it becomes strong enough to face bigger storms in life. Self-confidence does not mean being perfect; it means trusting yourself enough to try, learn, and grow.
+                    </p>
+                    <p class="font-bold text-xs mt-1">A. Choose the correct answer from a, b, c, or d:</p>
+                    <p>1. What does self-confidence mainly mean? (a. Winning / b. Believing in one's abilities / c. Being perfect / d. Avoiding risks)</p>
+                    <p>2. According to the passage, what helps in building self-confidence? (a. Avoiding challenges / b. Negative self-talk / c. Ignoring mistakes / d. Supportive friends)</p>
+                    <p>3. The passage compares self-confidence to ________. (a. a mountain / b. a storm / c. a plant / d. a book)</p>
+                    <p class="font-bold text-xs mt-1">B. Answer the following questions:</p>
+                    <p>4. Why might a confident student try to answer difficult questions in class? ................................................................</p>
+                    <p>5. What may happen to people who lack self-confidence? ................................................................</p>
+                    <p>6. How does the passage suggest self-confidence grows over time? ................................................................</p>
+                </div>
+
+                <!-- Q4 Story -->
+                <div class="border-b border-black pb-4 space-y-2">
+                    <div class="font-bold flex justify-between">
+                        <span>4. Story (Zeina):</span>
+                        <span>(5 Marks)</span>
+                    </div>
+                    <p class="font-bold text-xs">A. Choose the correct answer from a, b, c, or d:</p>
+                    <p>1. Zeina was a new student at a .................... school. (a. primary / b. preparatory / c. kindergarten / d. secondary)</p>
+                    <p>2. Zeina was always .................... and liked to notice everything around her. (a. curious / b. lazy / c. honest / d. silly)</p>
+                    <p>3. Nancy thought the gray playground was a little ________. (a. honest / b. curious / c. depressing / d. new)</p>
+                    <p>4. Zeina imagined students eating lunch among ________ and plants. (a. paper / b. classrooms / c. flowers / d. chairs)</p>
+                    <p class="font-bold text-xs mt-1">B. Answer the following questions:</p>
+                    <p>5. What did Zeina notice on her first day at school? ................................................................</p>
+                    <p>6. Why do you think Zeina wanted to improve the playground? ................................................................</p>
+                </div>
+
+                <!-- Q5 & Q6 Grammar -->
+                <div class="border-b border-black pb-4 space-y-2">
+                    <div class="font-bold flex justify-between">
+                        <span>5 & 6. Grammar & Rewrite:</span>
+                        <span>(6 Marks)</span>
+                    </div>
+                    <p class="font-bold text-xs">5. Rewrite the sentences:</p>
+                    <p>1. Will you tidy the flat? (already) -> ................................................................................</p>
+                    <p>2. Do you clean the flat? (yet) -> ................................................................................</p>
+                    <p>3. Sameh has drunk milk. (What.........?) -> ................................................................................</p>
+                    <p class="font-bold text-xs mt-1">6. Complete with the correct form:</p>
+                    <p>1. They (are) gone to the market. -> ................................................................................</p>
+                    <p>2. I've (already) been to Europe. I wish I could. -> ................................................................................</p>
+                    <p>3. Manar (has encouraged) by her family. -> ................................................................................</p>
+                </div>
+
+                <!-- Q7 Dialogue -->
+                <div class="border-b border-black pb-4 space-y-2">
+                    <div class="font-bold flex justify-between">
+                        <span>7. Finish the following dialogue:</span>
+                        <span>(4 Marks)</span>
+                    </div>
+                    <p class="text-xs italic">Context: A man wants to buy a pair of black shoes.</p>
+                    <div class="space-y-1.5 leading-loose">
+                        <p><strong>Man:</strong> Excuse me. I'm trying to find a pair of black shoes, please.</p>
+                        <p><strong>Assistant:</strong> (1) ................................................................................</p>
+                        <p><strong>Man:</strong> Size 44.</p>
+                        <p><strong>Assistant:</strong> Just a minute. Try this one.</p>
+                        <p><strong>Man:</strong> It's too tight.</p>
+                        <p><strong>Assistant:</strong> You can see this one. (2) ................................................................</p>
+                        <p><strong>Man:</strong> Yes, it's very nice.. (3) ................................................................</p>
+                        <p><strong>Assistant:</strong> It's 500 pounds.</p>
+                        <p><strong>Man:</strong> Here, it is. Thanks a lot.</p>
+                        <p><strong>Assistant:</strong> (4) ................................................................................</p>
+                    </div>
+                </div>
+
+                <!-- Q8 Writing -->
+                <div class="space-y-2">
+                    <div class="font-bold flex justify-between">
+                        <span>8. Paragraph:</span>
+                        <span>(2 Marks)</span>
+                    </div>
+                    <p>Write One Hundred and Ten (110) words on: <strong>"The role of values in our life"</strong></p>
+                    <div class="border border-black h-32 w-full p-2 text-xs text-gray-400">
+                        [ Write response lines here...]
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="text-center font-bold text-xs pt-6 border-t-2 border-black">
+                مع أطيب تمنياتي لكم بالنجاح والتفوق - أ / محمد عبد العزيز (01116597331)
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="no-print border-t border-slate-800/80 py-6 mt-12 bg-slate-950 text-slate-500 text-xs text-center space-y-2">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="font-semibold text-slate-400">
+                إمتحان علي الوحدة الأولي للصف الثالث الإعدادي (بنظام البوكليت الحديث) © 2027
+            </p>
+            <p>
+                إعداد أ / محمد عبد العزيز (معلم أول لغة إنجليزية) - 01116597331
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const CORRECT_ANSWERS = {
+            mcq_1: 'discovery',
+            mcq_2: 'im-',
+            mcq_3: 'depressed',
+            mcq_4: 'make',
+            gap_1: 'values',
+            gap_2: 'strong',
+            gap_3: 'give',
+            comp_mcq_1: 'b',
+            comp_mcq_2: 'd',
+            comp_mcq_3: 'c',
+            story_mcq_1: 'preparatory',
+            story_mcq_2: 'curious',
+            story_mcq_3: 'depressing',
+            story_mcq_4: 'flowers',
+            correct_1: 'have',
+            correct_2: 'never',
+            correct_3: 'was encouraged' // or has been encouraged
+        };
+
+        const MODEL_EXPLANATIONS = {
+            mcq_1: 'Self-discovery means learning more about who you are and your character.',
+            mcq_2: 'The prefix "im-" turns "patient" into "impatient" (opposite).',
+            mcq_3: 'The opposite of "delighted" (very happy) is "depressed".',
+            mcq_4: 'We use the collocation "make a change".',
+            gaps: 'Correct text: "...our personal values. My map showed that I am strong because I don\'t give up easily."',
+            comp_mcq_1: 'Self-confidence mainly means believing in one\'s own abilities.',
+            comp_mcq_2: 'Supportive friends help build self-confidence step by step.',
+            comp_mcq_3: 'The passage explicitly states: "Confidence grows step by step, like a plant watered every day."',
+            rewrite_1: 'Sample Rewrite: "Have you tidied the flat already?" or "Have you already tidied the flat?"',
+            rewrite_2: 'Sample Rewrite: "Haven\'t you cleaned the flat yet?" or "Have you cleaned the flat yet?"',
+            rewrite_3: 'Sample Rewrite: "What has Sameh drunk?"',
+            correct_1: 'They HAVE gone to the market (Present Perfect with past participle gone).',
+            correct_2: 'I\'ve NEVER been to Europe. I wish I could. (Shows negative experience wished for).',
+            correct_3: 'Manar WAS ENCOURAGED / HAS BEEN ENCOURAGED by her family (Passive voice).',
+            story_open_1: 'Sample Answer: She noticed that the playground was small, gray, and had no plants or flowers.',
+            story_open_2: 'Sample Answer: Because she wanted the school to feel more welcoming and beautiful for all the students.',
+            dialogue_1: 'Sample Assistant Question: "What size are you?" or "What size do you need?"',
+            dialogue_2: 'Sample Assistant Suggestion: "How about this one?" or "Would you like to try this one?"',
+            dialogue_3: 'Sample Question: "How much is it?" or "What is its price?"',
+            dialogue_4: 'Sample Reply: "You\'re welcome!" or "Not at all!"',
+            paragraph_sample: 'Sample Model Essay:\nValues play a vital role in shaping our lives and directing our actions. They act as a guide that helps us distinguish between right and wrong. Good personal values, such as honesty, respect, and perseverance, allow individuals to build strong relationships and gain self-confidence. In school and society, holding positive values encourages teamwork and mutual support. When we stay true to our values, we make better decisions and overcome challenges with resilience. Ultimately, a strong foundation of moral values creates a peaceful, successful, and harmonious community for everyone.'
+        };
+
+        const TEACHER_DASHBOARD_PASSWORD = '2027'; // يمكن للمعلم تغيير هذا الرقم كلمة سر للوحة
+
+        class ExamController {
+            constructor() {
+                this.timerInterval = null;
+                this.secondsLeft = 30 * 60; // 30 minutes
+                this.studentName = '';
+                this.applyStoredTheme();
+            }
+
+            applyStoredTheme() {
+                const theme = localStorage.getItem('examTheme') || 'dark';
+                const icon = document.getElementById('theme-toggle-icon');
+                if (theme === 'light') {
+                    document.body.classList.add('light-mode');
+                    if (icon) { icon.classList.remove('fa-sun'); icon.classList.add('fa-moon'); }
+                } else {
+                    document.body.classList.remove('light-mode');
+                    if (icon) { icon.classList.remove('fa-moon'); icon.classList.add('fa-sun'); }
+                }
+            }
+
+            toggleTheme() {
+                const isLight = document.body.classList.contains('light-mode');
+                localStorage.setItem('examTheme', isLight ? 'dark' : 'light');
+                this.applyStoredTheme();
+            }
+
+            getExamLockInfo() {
+                try {
+                    const raw = localStorage.getItem('examLockInfo');
+                    return raw ? JSON.parse(raw) : null;
+                } catch (e) {
+                    return null;
+                }
+            }
+
+            refreshHomeLockState() {
+                const lockInfo = this.getExamLockInfo();
+                const startPanel = document.getElementById('home-start-panel');
+                const lockedPanel = document.getElementById('home-locked-panel');
+                if (!startPanel || !lockedPanel) return;
+
+                if (lockInfo) {
+                    startPanel.classList.add('hidden');
+                    lockedPanel.classList.remove('hidden');
+                    const infoEl = document.getElementById('locked-panel-info');
+                    if (infoEl) {
+                        infoEl.textContent = `آخر محاولة: ${lockInfo.name} - الدرجة: ${lockInfo.score} / 30 - بتاريخ ${lockInfo.date}`;
+                    }
+                } else {
+                    startPanel.classList.remove('hidden');
+                    lockedPanel.classList.add('hidden');
+                }
+            }
+
+            unlockWithTeacherPassword() {
+                const entered = prompt('أدخل كلمة السر التي أعطاك إياها المعلم للسماح بمحاولة جديدة:');
+                if (entered === null) return;
+                if (entered.trim() !== TEACHER_DASHBOARD_PASSWORD) {
+                    alert('كلمة السر غير صحيحة.');
+                    return;
+                }
+                localStorage.removeItem('examLockInfo');
+                this.refreshHomeLockState();
+                alert('تم فتح الامتحان لك. يمكنك الآن كتابة اسمك والبدء.');
+            }
+
+            countArabicNameUnits(name) {
+                const words = name.split(' ').filter(Boolean);
+                // كلمات لا تُعتبر اسمًا مستقلاً بذاتها، بل جزء من الاسم المركب التالي لها
+                const mergePrefixes = ['عبد', 'عبدال', 'أبو', 'ابو', 'أبي', 'ابي', 'ابن', 'بن', 'أم', 'ام'];
+                const units = [];
+                for (let i = 0; i < words.length; i++) {
+                    if (mergePrefixes.includes(words[i]) && i + 1 < words.length) {
+                        units.push(words[i] + ' ' + words[i + 1]);
+                        i++; // تخطي الكلمة التالية لأنها اندمجت بالفعل
+                    } else {
+                        units.push(words[i]);
+                    }
+                }
+                return units;
+            }
+
+            startInteractiveExam() {
+                if (this.getExamLockInfo()) {
+                    alert('هذا الجهاز قام بتأدية الامتحان من قبل. تواصل مع المعلم للحصول على إذن ومحاولة جديدة.');
+                    this.refreshHomeLockState();
+                    return;
+                }
+
+                const nameInput = document.getElementById('student-name-input');
+                const name = nameInput ? nameInput.value.trim().replace(/\s+/g, ' ') : '';
+                const nameParts = name ? this.countArabicNameUnits(name) : [];
+
+                if (!name) {
+                    alert('من فضلك اكتب اسمك ثلاثيًا أولاً قبل بدء الامتحان.');
+                    if (nameInput) nameInput.focus();
+                    return;
+                }
+                if (nameParts.length < 3) {
+                    alert('من فضلك اكتب اسمك كاملاً ثلاثيًا (مثال: محمد أحمد علي) قبل بدء الامتحان. لاحظ أن الأسماء المركبة مثل "عبد الله" أو "أبو بكر" تُحسب اسمًا واحدًا فقط.');
+                    if (nameInput) nameInput.focus();
+                    return;
+                }
+                this.studentName = name;
+
+                document.getElementById('view-home').classList.add('hidden');
+                document.getElementById('view-results').classList.add('hidden');
+                document.getElementById('view-print-booklet').classList.add('hidden');
+                document.getElementById('view-teacher-dashboard').classList.add('hidden');
+                document.getElementById('view-exam').classList.remove('hidden');
+
+                this.startTimer();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            startTimer() {
+                if (this.timerInterval) clearInterval(this.timerInterval);
+
+                const updateDisplay = () => {
+                    const mins = Math.floor(this.secondsLeft / 60);
+                    const secs = this.secondsLeft % 60;
+                    document.getElementById('timer-display').textContent = 
+                        `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+
+                    if (this.secondsLeft <= 0) {
+                        clearInterval(this.timerInterval);
+                        alert('انتهى الوقت المحدد للامتحان! جاري رصد النتيجة تلقائياً...');
+                        this.submitExam();
+                    } else {
+                        this.secondsLeft--;
+                    }
+                };
+
+                updateDisplay();
+                this.timerInterval = setInterval(updateDisplay, 1000);
+            }
+
+            updateWordCount() {
+                const text = document.getElementById('paragraph_input').value.trim();
+                const words = text ? text.split(/\s+/).length : 0;
+                document.getElementById('word-count-num').textContent = words;
+            }
+
+            submitExam() {
+                if (this.timerInterval) clearInterval(this.timerInterval);
+
+                let objectiveScore = 0; // Out of 10
+                let compScore = 0; // Out of 6
+                let storyScore = 0; // Out of 8
+                let writingScore = 0; // Out of 6
+
+                // 1. Vocabulary MCQs (4 items)
+                ['mcq_1', 'mcq_2', 'mcq_3', 'mcq_4'].forEach(name => {
+                    const selected = document.querySelector(`input[name="${name}"]:checked`);
+                    if (selected && selected.value === CORRECT_ANSWERS[name]) {
+                        objectiveScore += 1;
+                    }
+                });
+
+                // 2. Complete Gaps (3 items)
+                ['gap_1', 'gap_2', 'gap_3'].forEach(id => {
+                    const val = document.getElementById(id).value;
+                    if (val === CORRECT_ANSWERS[id]) {
+                        objectiveScore += 1;
+                    }
+                });
+
+                // 3. Reading MCQs (3 items = 3 marks)
+                ['comp_mcq_1', 'comp_mcq_2', 'comp_mcq_3'].forEach(name => {
+                    const selected = document.querySelector(`input[name="${name}"]:checked`);
+                    if (selected && selected.value === CORRECT_ANSWERS[name]) {
+                        compScore += 1;
+                    }
+                });
+
+                // 3. Reading Open questions (3 items = 3 marks if attempted)
+                ['comp_open_1', 'comp_open_2', 'comp_open_3'].forEach(id => {
+                    const val = document.getElementById(id).value.trim();
+                    if (val.length >= 3) {
+                        compScore += 1;
+                    }
+                });
+
+                // 4. Story MCQs (4 items = 4 marks)
+                ['story_mcq_1', 'story_mcq_2', 'story_mcq_3', 'story_mcq_4'].forEach(name => {
+                    const selected = document.querySelector(`input[name="${name}"]:checked`);
+                    if (selected && selected.value === CORRECT_ANSWERS[name]) {
+                        storyScore += 1;
+                    }
+                });
+
+                // 4. Story Open (2 items = 2 marks)
+                ['story_open_1', 'story_open_2'].forEach(id => {
+                    const val = document.getElementById(id).value.trim();
+                    if (val.length >= 3) {
+                        storyScore += 1;
+                    }
+                });
+
+                // 5 & 6. Rewrite and Grammar (3 + 3 = 6 marks)
+                ['rewrite_1', 'rewrite_2', 'rewrite_3'].forEach(id => {
+                    const val = document.getElementById(id).value.trim();
+                    if (val.length >= 4) {
+                        storyScore += 0.66; // Total ~2
+                    }
+                });
+
+                ['correct_1', 'correct_2', 'correct_3'].forEach(id => {
+                    const val = document.getElementById(id).value.trim().toLowerCase();
+                    const target = CORRECT_ANSWERS[id];
+                    if (val.includes(target) || (id === 'correct_3' && (val.includes('encouraged')))) {
+                        objectiveScore += 1;
+                    }
+                });
+
+                // 7. Dialogue & Paragraph
+                let dScore = 0;
+                ['dialogue_1', 'dialogue_2', 'dialogue_3', 'dialogue_4'].forEach(id => {
+                    const val = document.getElementById(id).value.trim();
+                    if (val.length >= 2) dScore += 0.5;
+                });
+
+                const essayText = document.getElementById('paragraph_input').value.trim();
+                const wordCount = essayText ? essayText.split(/\s+/).length : 0;
+                let essayScore = Math.min(3, Math.round((wordCount / 110) * 3));
+
+                writingScore = Math.min(6, dScore + essayScore + 1);
+
+                // Total Final Score
+                const totalScore = Math.min(30, Math.round(objectiveScore + compScore + storyScore + writingScore));
+
+                // Render Results
+                document.getElementById('view-exam').classList.add('hidden');
+                document.getElementById('view-results').classList.remove('hidden');
+
+                document.getElementById('final-score-pct').textContent = `${totalScore} / 30`;
+                document.getElementById('score-obj').textContent = `${Math.min(10, Math.round(objectiveScore))} / 10`;
+                document.getElementById('score-comp').textContent = `${Math.min(6, Math.round(compScore))} / 6`;
+                document.getElementById('score-story').textContent = `${Math.min(8, Math.round(storyScore))} / 8`;
+                document.getElementById('score-write').textContent = `${Math.min(6, Math.round(writingScore))} / 6`;
+
+                const msgElement = document.getElementById('score-message');
+                if (totalScore >= 26) {
+                    msgElement.textContent = 'أداء ممتاز بامتياز! أظهرت إتقاناً تاماً لمفردات وقواعد الوحدة الأولى.';
+                    if (typeof confetti === 'function') {
+                        confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
+                    }
+                } else if (totalScore >= 20) {
+                    msgElement.textContent = 'نتيجة جيدة جداً! اجتزت معظم أجزاء الامتحان بنجاح.';
+                } else {
+                    msgElement.textContent = 'تحتاج إلى إعادة مراجعة كلمات وقواعد الوحدة الأولى والمحاولة مرة أخرى.';
+                }
+
+                this.renderDetailedResults();
+                this.lastTotalScore = totalScore;
+                this.saveSubmissionRecord(totalScore);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            saveSubmissionRecord(totalScore) {
+                try {
+                    const name = this.studentName || 'بدون اسم';
+                    const date = new Date().toLocaleString('ar-EG');
+                    const records = JSON.parse(localStorage.getItem('examSubmissions') || '[]');
+                    records.push({ name, score: totalScore, date });
+                    localStorage.setItem('examSubmissions', JSON.stringify(records));
+                    localStorage.setItem('examLockInfo', JSON.stringify({ name, score: totalScore, date }));
+                } catch (e) {
+                    console.error('Could not save submission record:', e);
+                }
+            }
+
+            sendResultToTeacherWhatsApp() {
+                const name = this.studentName || 'بدون اسم';
+                const score = this.lastTotalScore !== undefined ? this.lastTotalScore : document.getElementById('final-score-pct').textContent;
+                const date = new Date().toLocaleString('ar-EG');
+                const message =
+                    `📋 نتيجة امتحان الوحدة الأولى - الصف الثالث الإعدادي 2027\n` +
+                    `الاسم: ${name}\n` +
+                    `الدرجة: ${score} / 30\n` +
+                    `التاريخ: ${date}`;
+                const teacherPhoneIntl = '201116597331'; // 20 = مصر بدون الصفر الأول من الرقم
+                const url = `https://wa.me/${teacherPhoneIntl}?text=${encodeURIComponent(message)}`;
+                window.open(url, '_blank');
+            }
+
+            renderDetailedResults() {
+                const container = document.getElementById('results-breakdown-container');
+                container.innerHTML = `
+                    <div class="glass-box p-5 rounded-2xl border border-slate-800 space-y-3">
+                        <h4 class="font-bold text-sky-400 text-sm">1 & 2. Vocabulary MCQs & Box Text:</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed english-block">
+                            • MCQs: 1. (b) discovery | 2. (c) im- | 3. (b) depressed | 4. (d) make<br>
+                            • Box Text: (1) values | (2) strong | (3) give
+                        </p>
+                    </div>
+
+                    <div class="glass-box p-5 rounded-2xl border border-slate-800 space-y-3">
+                        <h4 class="font-bold text-sky-400 text-sm">3. Reading Comprehension Model Answers:</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed english-block">
+                            • A. MCQs: 1. (b) Believing in one's abilities | 2. (d) Supportive friends | 3. (c) a plant<br>
+                            • B.4: Because making mistakes is part of learning, and courage leads to improvement.<br>
+                            • B.5: They may avoid opportunities and chances because they fear failure.<br>
+                            • B.6: Step by step through small successes, supportive friends, and positive self-talk like a plant watered every day.
+                        </p>
+                    </div>
+
+                    <div class="glass-box p-5 rounded-2xl border border-slate-800 space-y-3">
+                        <h4 class="font-bold text-sky-400 text-sm">4. Story (Zeina) Model Answers:</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed english-block">
+                            • A. MCQs: 1. (b) preparatory | 2. (a) curious | 3. (c) depressing | 4. (c) flowers<br>
+                            • B.5: ${MODEL_EXPLANATIONS.story_open_1}<br>
+                            • B.6: ${MODEL_EXPLANATIONS.story_open_2}
+                        </p>
+                    </div>
+
+                    <div class="glass-box p-5 rounded-2xl border border-slate-800 space-y-3">
+                        <h4 class="font-bold text-sky-400 text-sm">5. Rewrite the Sentences:</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed english-block">
+                            • 1: Have you tidied the flat already? (or: Have you already tidied the flat?)<br>
+                            • 2: Haven't you cleaned the flat yet? (or: Have you cleaned the flat yet?)<br>
+                            • 3: What has Sameh drunk?
+                        </p>
+                    </div>
+
+                    <div class="glass-box p-5 rounded-2xl border border-slate-800 space-y-3">
+                        <h4 class="font-bold text-sky-400 text-sm">6. Correct Form (Brackets):</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed english-block">
+                            • 1: have (Present Perfect: "have gone")<br>
+                            • 2: never (I've NEVER been to Europe)<br>
+                            • 3: was encouraged / has been encouraged (Passive voice)
+                        </p>
+                    </div>
+
+                    <div class="glass-box p-5 rounded-2xl border border-slate-800 space-y-3">
+                        <h4 class="font-bold text-sky-400 text-sm">7. Dialogue Model Answers:</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed english-block">
+                            • (1) ${MODEL_EXPLANATIONS.dialogue_1}<br>
+                            • (2) ${MODEL_EXPLANATIONS.dialogue_2}<br>
+                            • (3) ${MODEL_EXPLANATIONS.dialogue_3}<br>
+                            • (4) ${MODEL_EXPLANATIONS.dialogue_4}
+                        </p>
+                    </div>
+
+                    <div class="glass-box p-5 rounded-2xl border border-slate-800 space-y-3">
+                        <h4 class="font-bold text-sky-400 text-sm">8. Model Paragraph ("The role of values in our life"):</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed whitespace-pre-line english-block">${MODEL_EXPLANATIONS.paragraph_sample}</p>
+                    </div>
+                `;
+            }
+
+            retakeExam() {
+                const wantsToRequest = confirm('إعادة الامتحان تحتاج إذن المعلم. هل تريد إرسال رسالة الآن للمعلم على الواتساب لطلب الإذن؟');
+                if (wantsToRequest) {
+                    this.sendRetakeRequestWhatsApp();
+                }
+
+                const entered = prompt('بعد موافقة المعلم، أدخل كلمة السر التي أعطاك إياها للسماح بإعادة الامتحان:');
+                if (entered === null) return;
+                if (entered.trim() !== TEACHER_DASHBOARD_PASSWORD) {
+                    alert('كلمة السر غير صحيحة. لا يمكن إعادة الامتحان بدون إذن المعلم.');
+                    return;
+                }
+
+                localStorage.removeItem('examLockInfo');
+                this.secondsLeft = 30 * 60;
+                document.getElementById('exam-form').reset();
+                document.getElementById('word-count-num').textContent = '0';
+                this.startInteractiveExam();
+            }
+
+            sendRetakeRequestWhatsApp() {
+                const name = this.studentName || 'بدون اسم';
+                const score = this.lastTotalScore !== undefined ? this.lastTotalScore : document.getElementById('final-score-pct').textContent;
+                const date = new Date().toLocaleString('ar-EG');
+                const message =
+                    `🔄 طلب إذن بإعادة امتحان الوحدة الأولى - 2027\n` +
+                    `الاسم: ${name}\n` +
+                    `درجته السابقة: ${score} / 30\n` +
+                    `التاريخ: ${date}\n` +
+                    `يرجى الموافقة وإرسال كلمة السر للطالب لإعادة الامتحان.`;
+                const teacherPhoneIntl = '201116597331';
+                const url = `https://wa.me/${teacherPhoneIntl}?text=${encodeURIComponent(message)}`;
+                window.open(url, '_blank');
+            }
+
+            confirmExitExam() {
+                if (confirm('هل أنت تأكد من الخروج من الامتحان الحالي؟')) {
+                    if (this.timerInterval) clearInterval(this.timerInterval);
+                    this.showHome();
+                }
+            }
+
+            showHome() {
+                if (this.timerInterval) clearInterval(this.timerInterval);
+                document.getElementById('view-exam').classList.add('hidden');
+                document.getElementById('view-results').classList.add('hidden');
+                document.getElementById('view-print-booklet').classList.add('hidden');
+                document.getElementById('view-teacher-dashboard').classList.add('hidden');
+                document.getElementById('view-home').classList.remove('hidden');
+                this.refreshHomeLockState();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            togglePrintMode() {
+                const bookletSec = document.getElementById('view-print-booklet');
+                if (bookletSec.classList.contains('hidden')) {
+                    document.getElementById('view-home').classList.add('hidden');
+                    document.getElementById('view-exam').classList.add('hidden');
+                    document.getElementById('view-results').classList.add('hidden');
+                    document.getElementById('view-teacher-dashboard').classList.add('hidden');
+                    bookletSec.classList.remove('hidden');
+                    window.print();
+                } else {
+                    this.showHome();
+                }
+            }
+
+            showTeacherDashboard() {
+                const entered = prompt('من فضلك أدخل كلمة سر المعلم لعرض اللوحة:');
+                if (entered === null) return;
+                if (entered.trim() !== TEACHER_DASHBOARD_PASSWORD) {
+                    alert('كلمة السر غير صحيحة.');
+                    return;
+                }
+
+                document.getElementById('view-home').classList.add('hidden');
+                document.getElementById('view-exam').classList.add('hidden');
+                document.getElementById('view-results').classList.add('hidden');
+                document.getElementById('view-print-booklet').classList.add('hidden');
+                document.getElementById('view-teacher-dashboard').classList.remove('hidden');
+
+                this.renderDashboard();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            getStoredRecords() {
+                try {
+                    return JSON.parse(localStorage.getItem('examSubmissions') || '[]');
+                } catch (e) {
+                    return [];
+                }
+            }
+
+            renderDashboard() {
+                const records = this.getStoredRecords();
+                const tbody = document.getElementById('dashboard-table-body');
+                const emptyState = document.getElementById('dashboard-empty-state');
+                const summary = document.getElementById('dashboard-summary');
+
+                if (records.length === 0) {
+                    tbody.innerHTML = '';
+                    emptyState.classList.remove('hidden');
+                    summary.innerHTML = '';
+                    return;
+                }
+                emptyState.classList.add('hidden');
+
+                const totalStudents = records.length;
+                const avgScore = (records.reduce((sum, r) => sum + Number(r.score || 0), 0) / totalStudents).toFixed(1);
+                const highest = Math.max(...records.map(r => Number(r.score || 0)));
+                const lowest = Math.min(...records.map(r => Number(r.score || 0)));
+
+                summary.innerHTML = `
+                    <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800 text-center">
+                        <span class="text-slate-400 block mb-1">عدد الطلاب</span>
+                        <span class="text-white font-bold text-sm">${totalStudents}</span>
+                    </div>
+                    <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800 text-center">
+                        <span class="text-slate-400 block mb-1">متوسط الدرجات</span>
+                        <span class="text-sky-400 font-bold text-sm">${avgScore} / 30</span>
+                    </div>
+                    <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800 text-center">
+                        <span class="text-slate-400 block mb-1">أعلى درجة</span>
+                        <span class="text-emerald-400 font-bold text-sm">${highest} / 30</span>
+                    </div>
+                    <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800 text-center">
+                        <span class="text-slate-400 block mb-1">أقل درجة</span>
+                        <span class="text-red-400 font-bold text-sm">${lowest} / 30</span>
+                    </div>
+                `;
+
+                tbody.innerHTML = records.slice().reverse().map((r, i) => `
+                    <tr class="border-b border-slate-800/60">
+                        <td class="p-2 text-slate-500">${records.length - i}</td>
+                        <td class="p-2 text-white font-semibold">${this.escapeHtml(r.name)}</td>
+                        <td class="p-2 text-slate-400 text-xs">${this.escapeHtml(r.date)}</td>
+                        <td class="p-2 text-sky-400 font-bold">${r.score} / 30</td>
+                    </tr>
+                `).join('');
+            }
+
+            escapeHtml(str) {
+                const div = document.createElement('div');
+                div.textContent = str;
+                return div.innerHTML;
+            }
+
+            exportDashboardCSV() {
+                const records = this.getStoredRecords();
+                if (records.length === 0) {
+                    alert('لا يوجد بيانات لتصديرها بعد.');
+                    return;
+                }
+                let csv = 'الاسم,التاريخ,الدرجة\n';
+                records.forEach(r => {
+                    csv += `"${r.name}","${r.date}",${r.score}\n`;
+                });
+                const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8;' });
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.download = 'exam_results_2027.csv';
+                link.click();
+            }
+
+            clearDashboardData() {
+                if (confirm('هل أنت متأكد من مسح كل سجلات الطلاب المحفوظة على هذا الجهاز؟ لا يمكن التراجع عن هذا الإجراء.')) {
+                    localStorage.removeItem('examSubmissions');
+                    localStorage.removeItem('examLockInfo');
+                    this.renderDashboard();
+                }
+            }
+        }
+
+        let app;
+        window.addEventListener('DOMContentLoaded', () => {
+            app = new ExamController();
+            app.refreshHomeLockState();
+        });
+    </script>
+</body>
+</html>
